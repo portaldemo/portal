@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <!-- /CONTENT-->
+    <div id="content" class="col-lg-12 content-background">
+      <!-- PAGE HEADER-->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="page-header">
+            <!-- BREADCRUMBS -->
+            <ul class="breadcrumb">
+              <li>
+                <span class="breadcrumTitle">
+                  <a href="#dashboard">Dashboard</a>
+                </span>
+              </li>
+              <li>
+                <span class="breadcrumTitle">
+                  <a href="#roles" tabindex="1">Roles</a>
+                </span>
+              </li>
+              <li class="breadcrumTitle">
+                {{headerMessage}}
+              </li>
+            </ul>
+            <!-- /BREADCRUMBS -->
+            <div class="clearfix">
+              <h3 class="content-title pull-left">
+                {{headerMessage}}
+              </h3>
+            </div>
+          </div>
+          <div class="page-div-separator-height"></div>
+        </div>
+      </div>
+      <!-- /PAGE HEADER -->
+      <!-- Add User Form -->
+      <div class="row">
+        <div class="col-md-12" style="margin-left: -15px;">
+          <div class="box-body" style="margin-left:50px;">
+            
+              <div class="row">
+                <div class="form-group col-md-5 has-feedback">
+                  <label for="roleName" class="allLabel">Role</label>
+                  <input type="text" class="form-control has-feedback-left" id="roleName" placeholder="Enter Role Name" ng-model="roleDetail.roleName" ng-class="{errorborder: roleValidationErrors.roleName}" ng-keydown="onlyLettersAndSomeSpecialChars($event)" ng-maxlength="40" maxlength="40" tabindex="2">
+                  <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                  <span  class="errorcolor" ng-show="roleValidationErrors.roleName">{{roleValidationErrors.roleNameErrorMsg}}</span>
+                  <span class="errorcolor" ng-show="roleDetail.roleName.length == 40">
+                    Role Name allows max 40 char.</span>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="form-group col-md-5">
+                  <label for="roleDescription" class="allLabel">Role Description</label>
+                  <input type="text" class="form-control" id="roleDescription" placeholder="Enter Role Description"  ng-model="roleDetail.roleDescription" ng-class="{errorborder: roleValidationErrors.roleDescription}" ng-keydown="onlyLettersAndSomeSpecialChars($event)" ng-maxlength="40" maxlength="40" tabindex="3">
+                  <span  class="errorcolor" ng-show="roleValidationErrors.roleDescription">{{roleValidationErrors.roleDescriptionErrorMsg}}</span>
+                  <span class="errorcolor" ng-show="roleDetail.roleDescription.length == 40">
+                    Role Description allows max 40 char.</span>
+                </div>
+              </div>
+              <br>
+              <!--button section-->
+              <div class="row">
+                <div class="form-group col-md-5">
+                  <button class="btn btn-success submitBtn" ng-click="addUpdateRole();" tabindex="6">
+                    {{buttonTitle}}
+                  </button> &nbsp;
+                  <a href="#roles" class="btn btn-danger cancelBtn" tabindex="7"> Cancel</a>
+                </div>
+              </div>
+              <!--/Button section-->
+            <!-- <form> -->
+          </div>
+        </div>
+      </div>
+      <!-- /Add User Form -->
+    </div>
+  </div>
+  <!-- /CONTENT-->
+</div>

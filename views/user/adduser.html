@@ -1,0 +1,88 @@
+
+      <!-- PAGE HEADER-->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <!-- BREADCRUMBS -->
+            <ul class="breadcrumb">
+              <li>
+                <span class="breadcrumTitle">
+                  <a href="#dashboard">Dashboard</a>
+                </span>
+              </li>
+              <li>
+                <span class="breadcrumTitle">
+                  <a href="#users" tabindex="1">Users</a>
+                </span>
+              </li>
+              <li class="breadcrumTitle">
+                {{headerMessage}}
+              </li>
+            </ul>
+            <!-- /BREADCRUMBS -->
+            <div class="clearfix">
+              <h3 class="content-title pull-left">
+                {{headerMessage}}
+              </h3>
+            </div>
+          </div>
+          <div class="page-div-separator-height"></div>
+        </div>
+      </div>
+      <!-- /PAGE HEADER -->
+      <!-- Add User Form -->
+      <div class="row">
+        <div class="col-md-12" style="margin-left: 1%;">
+          <div class="box-body" style="margin-left:4%;">
+            <!-- <form class="form-horizontal" name="form"  autocomplete="off" ng-submit="addUser();"> -->
+              <div class="row">
+                <div class="form-group col-md-5">
+                  <label for="firstName" class="allLabel">First Name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" ng-model="user.firstName" ng-class="{errorborder: userValidationErrors.firstName}" ng-keydown="onlyLettersAndSomeSpecialChars($event)" ng-maxlength="40" maxlength="40" tabindex="2">
+                  <span  class="errorcolor" ng-show="userValidationErrors.firstName">{{userValidationErrors.firstNameErrorMsg}}</span>
+                  <span class="errorcolor" ng-show="user.firstName.length == 40">
+                    First name allows max 40 char.</span>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="form-group col-md-5">
+                  <label for="lastName" class="allLabel">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name"  ng-model="user.lastName" ng-class="{errorborder: userValidationErrors.lastName}" ng-keydown="onlyLettersAndSomeSpecialChars($event)" ng-maxlength="40" maxlength="40" tabindex="3">
+                  <span  class="errorcolor" ng-show="userValidationErrors.lastName">{{userValidationErrors.lastNameErrorMsg}}</span>
+                  <span class="errorcolor" ng-show="user.lastName.length == 40">
+                    Last name allows max 40 char.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group mandatoryField">
+                    <label for="email" class="allLabel">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter Email"  ng-model="user.emailId" ng-class="{errorborder: userValidationErrors.email}" tabindex="4" ng-disabled="userId">
+                    <span  class="errorcolor" ng-show="userValidationErrors.email">{{userValidationErrors.emailErrorMsg}}</span>
+                  </div>
+
+                </div>
+                <div class="col-md-1"></div>
+                <div class="form-group col-md-5">
+                  <label for="role" class="allLabel">Role</label>
+                  <select id="role" name="role" class="form-control" ng-model="selectedRoles" ng-options="role.id as role.name for role in roles" ng-class="{errorborder: userValidationErrors.roles}" tabindex="5" >
+                    <option value=""> Select Role </option>
+                  </select>
+                  <span  class="errorcolor" ng-show="userValidationErrors.roles">{{userValidationErrors.roleErrorMsg}}</span>
+                </div>
+              </div><br>
+              <!--button section-->
+              <div class="row">
+                <div class="form-group col-md-5">
+                  <button class="btn btn-success submitBtn" ng-click="addUpdateUser();" tabindex="6">
+                    {{buttonTitle}}
+                  </button> &nbsp;
+                  <a href="#users" class="btn btn-danger cancelBtn" tabindex="7"> Cancel</a>
+                </div>
+              </div>
+              <!--/Button section-->
+            <!-- <form> -->
+          </div>
+        </div>
+      </div>
+      <!-- /Add User Form -->
+ 

@@ -1,0 +1,84 @@
+<div class="">
+    <div class="page-title">
+      <div class="title_left">
+          <h4><ul class="breadcrumb">
+            <li> <span class="breadcrumTitle"> <a href="#dashboard">Dashboard</a> </span> </li>
+            <li> <span class="breadcrumTitle"> Training Schedules </span> </li> </ul></h4>
+      </div>
+      <div class="title_right">
+          <span class="pull-right">
+            <div class="tools"><span><a href="#addtrainingschedule" class="btn btn-primary page-font-size-14">
+            <i class="fa fa-plus-square"></i> Add Schedule</a>&nbsp;&nbsp;</span>
+            </div>
+          </span>
+      </div>
+  </div>
+  <div class="clearfix"></div>
+    <div class="row">
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="page-title">
+                  <div class="title_left">
+                      <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-left"> </div>
+                  </div>
+                  <div class="title_right">
+                      <div class="col-md-8 col-sm-8 col-xs-12 form-group pull-right has-feedback">  
+                    <i class="glyphicon glyphicon-search form-control-feedback left"> </i>
+                      <input type="text" ng-model="searchUser" class="form-control has-feedback-left" placeholder="Search for..."> </div>
+                  </div>
+              </div>
+                <div class="x_content">
+                    <table id="example" class="table table-striped responsive-utilities jambo_table">
+                        <thead>
+                            <tr class="headings">
+                              <th> Center Name </th>
+                              <th> Course Name </th>
+                              <th> Start Date </th>
+                              <th> End Date </th>
+                              <th> Trainer </th>
+                              <th> Description </th>
+                              <th style="text-align:center"> Action </th>
+                            </tr>
+                        </thead>
+                       
+                        <tbody>
+                            <tr class="even pointer" ng-repeat="trainingSchedule in filtered = trainingSchedules | filter:searchFilter | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                              <td>{{ trainingSchedule.trainingCenter }}</td>
+                              <td>{{ trainingSchedule.trainingCourse }}</td>
+                              <td>{{ trainingSchedule.startDate }}</td>
+                              <td>{{ trainingSchedule.endDate }}</td>
+                              <td>{{ trainingSchedule.trainerName }}</td>
+                              <td>{{ trainingSchedule.description }}</td>
+                              <td style="text-align:center">
+                                <div>
+                                  <a href="javascript:;" ng-click="deactivateTrainingSchedule(trainingSchedule);" title="Deactivate Training Schedule" style="margin-right: 1px;" ng-show='{{trainingSchedule.status=="ACTIVE"}}'>
+                                    <i class="fa fa-times-circle"></i>
+                                  </a>
+                                  <a href="javascript:;" ng-click="activateTrainingSchedule(trainingSchedule);" title="Activate Training Schedule" ng-show='{{trainingSchedule.status=="INACTIVE"}}'>
+                                    <i class="fa fa-check-circle"></i>
+                                  </a>
+                                  <a href="#trainingschedule/{{trainingSchedule.id}}" title="Show Detail">
+                                    <i class="fa fa-eye"></i>
+                                  </a>
+                                  <a href="#addtrainingschedule/{{trainingSchedule.id}}" title="Edit">
+                                    <i class="fa fa-edit"></i>
+                                  </a>
+                                  <a href="javascript:;" ng-click="deletetrainingSchedule(trainingSchedule);" title="Delete">
+                                    <i class="fa fa-trash-o"></i>
+                                  </a>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+    </div>
+</div>

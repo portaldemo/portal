@@ -1,0 +1,141 @@
+
+      <!-- PAGE HEADER-->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <!-- BREADCRUMBS -->
+            <ul class="breadcrumb">
+              <li>
+                <span class="breadcrumTitle">
+                  <a href="#dashboard">Dashboard</a>
+                </span>
+              </li>
+              <li>
+                <span class="breadcrumTitle">
+                  <a href="#dealers" tabindex="1">Dealers</a>
+                </span>
+              </li>
+              <li class="breadcrumTitle">
+                {{headerMessage}}
+              </li>
+            </ul>
+            <!-- /BREADCRUMBS -->
+            <div class="clearfix">
+              <h3 class="content-title pull-left">
+                {{headerMessage}}
+              </h3>
+            </div>
+          </div>
+          <div class="page-div-separator-height"></div>
+        </div>
+      </div>
+      <!-- /PAGE HEADER -->
+      <!-- Add daeler Form -->
+      <div class="row">
+        <div class="col-md-12" style="margin-left: 1%;">
+          <div class="box-body" style="margin-left:4%;">
+              <form name="dealerform">
+                 <div class="row">
+                  <div class="form-group col-md-5">
+                    <label for="dealercode" class="allLabel">Dealer Code</label>
+                    <input type="text" class="form-control" id="dealercode" placeholder="Enter dealer code" ng-model="dealerDetail.code" ng-class="{errorborder: dealerValidationErrors.dealercode}" ng-maxlength="10" maxlength="10" tabindex="2" ng-keydown="onlyLettersAndNumbers($event)">
+                    <span  class="errorcolor" ng-show="dealerValidationErrors.dealercode">{{dealerValidationErrors.dealercodeErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="dealerDetail.dealercode.length >= 10">
+                      Dealer code allows max 10 char.</span>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="form-group col-md-5">
+                    <label for="dealername" class="allLabel">Dealer Name</label>
+                    <input type="text" class="form-control" id="dealername" placeholder="Enter dealer name" ng-model="dealerDetail.name" ng-class="{errorborder: dealerValidationErrors.dealername}" ng-maxlength="100" maxlength="100" tabindex="2" ng-keydown="onlyLettersAndSomeSpecialChars($event)">
+                    <span  class="errorcolor" ng-show="dealerValidationErrors.dealername">{{dealerValidationErrors.dealerNameErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="dealerDetail.dealername.length >= 100">
+                      Dealer name allows max 100 char.</span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-11">
+                    <div class="form-group">
+                      <label for="address" class="allLabel">Address</label>
+                      <input type="text" class="form-control" id="address" placeholder="Enter dealer address" ng-model="dealerDetail.address" tabindex="7">
+                    </div>
+
+                  </div>                
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-5">
+                    <label for="stateId" class="allLabel">State</label>
+                    <select class="form-control" id="stateId" ng-model='dealerDetail.stateId'>
+                      <option value="1">Maharashtra</option>
+                      <option value="2">Tamilnadu</option>
+                      <option value="3">Punjab</option>
+                      <option value="4">Karnataka</option>
+                    </select>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="form-group col-md-5">
+                    <label for="city" class="allLabel">City</label><br>
+                    <input type="text" class="form-control" id="city" placeholder="Enter city name" ng-model="dealerDetail.city" ng-class="{errorborder: dealerValidationErrors.city}" ng-maxlength="50" maxlength="50" tabindex="2" ng-keydown="onlyLetters($event)">
+                    <span  class="errorcolor" ng-show="dealerValidationErrors.city">{{dealerValidationErrors.cityNameErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="dealerDetail.city.length >= 50">
+                      City name allows max 50 char.</span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-5">
+                    <label for="contactPerson" class="allLabel">Contact Person Name</label>
+                    <input type="text" class="form-control" id="contactPerson" placeholder="Enter contact person name" ng-model="dealerDetail.contactPerson" ng-class="{errorborder: dealerValidationErrors.contactPerson}" ng-maxlength="100" maxlength="100" tabindex="2" ng-keydown="onlyLetters($event)">
+                    <span  class="errorcolor" ng-show="dealerValidationErrors.contactPerson">{{dealerValidationErrors.courseNameErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="dealerDetail.contactPerson.length >= 100">
+                      Contact person name allows max 100 char.</span>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="form-group col-md-5">
+                    <label for="email" class="allLabel">Email Address</label><br>
+                    <input type="text" class="form-control" id="email" placeholder="Enter email address" ng-model="dealerDetail.email" ng-class="{errorborder: dealerValidationErrors.email}" ng-maxlength="100" maxlength="100" tabindex="2" ng-keydown="onlyLetters($event)">
+                    <span class="errorcolor" ng-show="dealerValidationErrors.email">{{dealerValidationErrors.courseNameErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="dealerDetail.email.length >= 50">
+                      Email address allows max 100 char.</span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-5">
+                    <label for="mobileNo" class="allLabel">Mobile Number</label>
+                    <input type="text" class="form-control" id="mobileNo" placeholder="Enter contact mobile number" ng-model="dealerDetail.mobileNo" ng-class="{errorborder: dealerValidationErrors.mobileNo}" ng-maxlength="10" maxlength="10" tabindex="2" ng-keydown="onlyNumbers($event)">
+                    <span  class="errorcolor" ng-show="dealerValidationErrors.mobileNo">{{dealerValidationErrors.mobilenumberErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="dealerDetail.mobileNo.length >= 10">
+                      Mobile number allows max 10 char.</span>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="form-group col-md-5">
+                    <label for="phoneNo" class="allLabel">Phone Number</label><br>
+                    <input type="text" class="form-control" id="phoneNo" placeholder="Enter phone number" ng-model="dealerDetail.phoneNo" ng-class="{errorborder: dealerValidationErrors.phoneNo}" ng-maxlength="15" maxlength="15" tabindex="2" ng-keydown="onlyNumbers($event)">
+                    <span  class="errorcolor" ng-show="dealerValidationErrors.phoneNo">{{dealerValidationErrors.phoneNumberErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="dealerDetail.phoneNo.length >= 15">
+                      Phone number allows max 15 char.</span>
+                  </div>
+                </div>
+
+                  <br>
+                </div>
+              </form>
+
+              <!--button section-->
+              <div class="row">
+                <div class="form-group col-md-5">
+                  <button class="btn btn-success submitBtn" ng-click="addUpdateDealer();" tabindex="6">
+                    {{buttonTitle}}
+                  </button> &nbsp;
+                  <a href="#dealers" class="btn btn-danger cancelBtn" tabindex="7"> Cancel</a>
+                </div>
+              </div>
+              <!--/Button section-->
+            <!-- <form> -->
+          </div>
+        </div>
+      </div>
+      <!-- /Add dealer Form -->
+ 

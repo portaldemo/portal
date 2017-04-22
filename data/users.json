@@ -1,0 +1,96 @@
+[
+    {
+        "id": "55dd56f544ae5e3f065126f1",
+        "_class": "com.nimbuzz.mongo.model.User",
+        "emailId": "gauravdabhade24@gmail.com",
+        "firstName": "gaurav",
+        "lastName": "dabhade",
+        "token": "gauravdabhade24@gmail.com:1440572676153:d8c4e74e4703f7d1f24d71e71470c6b6",
+        "createdOn": "2015-08-26T06:04:24.223Z",
+        "isDeleted": false,
+        "resetKey": "jQzTIkPJ",
+        "status": "NEW",
+        "entityType": "USER",
+        "resetKeyTime": "2015-08-26T06:04:38.639Z",
+        "role": "Administrator"
+    },
+    {
+        "id": "55c04ef044ae761b7fb80a75",
+        "_class": "com.nimbuzz.mongo.model.User",
+        "emailId": "admin@nimbuzz.com",
+        "firstName": "dsp",
+        "lastName": "admin",
+        "createdOn": "2015-08-04T05:34:40.053Z",
+        "isDeleted": false,
+        "encryptedPassword": "vKqDwKWTZC75XO4HpkIBjw==",
+        "status": "ACTIVE",
+        "entityType": "Administrator",
+        "userAuth": {
+            "$ref": "UserAuth",
+            "$id": "5614ed6a44ae626be6662f0d"
+        },
+        "role": "Campaign Administrator"
+    },
+    {
+        "id": "55deae3044aed2359fc34feb",
+        "_class": "com.nimbuzz.mongo.model.User",
+        "emailId": "pramod.shinde@live.com",
+        "firstName": "Pramod",
+        "lastName": "Shinde",
+        "token": "pramod.shinde@live.com:1440660544575:739b311714771e6a170d2a20d72bdfc0",
+        "createdOn": "2015-08-27T06:29:04.559Z",
+        "isDeleted": false,
+        "resetKey": "jdbujAXj",
+        "status": "NEW",
+        "entityType": "USER",
+        "resetKeyTime": "2015-08-27T06:29:04.580Z",
+        "role": "Report User"    
+    },
+    {
+        "id": "55ead00e44aee984ead2acb9",
+        "_class": "com.nimbuzz.mongo.model.User",
+        "emailId": "vijay.rande@gmail.com",
+        "firstName": "vijay",
+        "lastName": "ranade",
+        "token": "vijay.rande@gmail.com:1441455646229:85de26da5c03bf8839a67d68a90305cd",
+        "createdOn": "2015-09-05T11:20:46.224Z",
+        "isDeleted": false,
+        "resetKey": "vls5Qkp7",
+        "status": "NEW",
+        "entityType": "USER",
+        "resetKeyTime": "2015-09-05T11:20:46.234Z",
+        "role":"Report User"
+    },
+    {
+        "id": "55ead0f144aee984ead2acbb",
+        "_class": "com.nimbuzz.mongo.model.User",
+        "emailId": "parag.dhene@gmail.com",
+        "firstName": "vijay",
+        "lastName": "ranade",
+        "token": "parag.dhene@gmail.com:1441455873702:b806e2814fef568e062f39e3260371cd",
+        "createdOn": "2015-09-05T11:24:33.698Z",
+        "isDeleted": false,
+        "resetKey": "TDX6MvbV",
+        "status": "NEW",
+        "entityType": "USER",
+        "resetKeyTime": "2015-09-05T11:24:33.703Z",
+        "role":"Administrator"        
+    },
+    {
+        "id": "1",
+        "_class": "com.nimbuzz.mongo.model.User",
+        "emailId": "ngage-admin@websym.com",
+        "firstName": "dsp",
+        "lastName": "admin",
+        "createdOn": "2015-09-16T06:37:32.704Z",
+        "isDeleted": false,
+        "encryptedPassword": "Fty1VvRH23BiFb2FoWIcTA==",
+        "status": "ACTIVE",
+        "entityType": "Admin",
+        "userAuth": {
+            "$ref": "UserAuth",
+            "$id": "5613a4fd44aebc01e98e7889"
+        },
+        "role": "Administrator"
+    }
+]

@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="row">
+    <!-- /CONTENT-->
+    <div id="content" class="col-lg-12 content-background">
+      <!-- PAGE HEADER-->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="page-header">
+            <!-- BREADCRUMBS -->
+            <table width="100%">
+              <tr>
+                <td width="95%" align="left">
+                  <ul class="breadcrumb" style="margin-top:15px;">
+                    <li>
+                      <span class="breadcrumTitle">
+                        <a href="#ngdashboard">Dashboard</a>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="breadcrumTitle">
+                        <a href="#dealers" tabindex="1">Dealers</a>
+                      </span>
+                    </li>
+                    <li class="breadcrumTitle">
+                      Dealer Details
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <!-- /BREADCRUMBS -->
+            <div class="clearfix">
+            </div>
+          </div>
+          <div class="page-div-separator-height"></div>
+        </div>
+      </div>
+      <!-- /PAGE HEADER -->
+      <!-- Add User Form -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box-body-form" style="margin-left:50px;">
+            <div class="row">
+              <div class="col-md-4">
+                <label for="dealercode">Dealer Code</label><br>
+                <lable>{{dealerDetail.code}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="dealername">Dealer Name</label><br>
+                <lable>{{dealerDetail.name}}</label>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="dealeraddress">address</label><br>
+                <lable>{{dealerDetail.address}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="pincode">Pincode</label><br>
+                <lable>{{dealerDetail.pincode}}</label>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="statename">State</label><br>
+                <lable>{{dealerDetail.state.name}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="city">City</label><br>
+                <lable>{{dealerDetail.city}}</label>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="contactPerson">Contact Person</label><br>
+                <lable>{{dealerDetail.contactPerson}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="coursetype">Email Address</label><br>
+                <lable>{{dealerDetail.email}}</label>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="mobileNo">Mobile Number</label><br>
+                <lable>{{dealerDetail.mobileNo}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="phoneNo">Phone Number</label><br>
+                <lable>{{dealerDetail.phoneNo}}</label>
+              </div>
+            </div><br>
+
+            <!--button section-->
+              <div class="row">
+                <div class="form-group col-md-5" style="margin-top: 10%">
+                  <a href="#addDealer/{{id}}" class="btn btn-success" ng-click="updateDealer();" style="width:20%;" ng-if="$root.previliges.Manage_UserMgt == true">
+                    Edit&nbsp;
+                  </a>
+                   <button class="btn btn-success" ng-click="deleteDealer(detailDetail);" style="width:20%;" ng-if="$root.previliges.Manage_UserMgt == true">
+                    Delete&nbsp;
+                  </button>
+                   <button class="btn btn-success" ng-click="deactivateDealer(dealerDetail);" ng-cloak ng-if = "dealerDetail.status === 'ACTIVE' && $root.previliges.Manage_UserMgt == true">
+                    Deactivate&nbsp;
+                  </button>
+                  <button class="btn btn-success" ng-click="activateDealer(dealerDetail);" ng-cloak ng-if = "dealerDetail.status === 'INACTIVE' && $root.previliges.Manage_UserMgt == true">
+                    Activate&nbsp;
+                  </button>
+                  <a href="#dealers" class="btn btn-danger cancelBtn"> Cancel</a>
+                </div>
+              </div>
+              <!--/Button section-->
+          </div>
+        </div>
+      </div>
+      <!-- /Add User Form -->
+    </div>
+  </div>
+  <!-- /CONTENT-->
+</div>

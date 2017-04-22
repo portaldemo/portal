@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row">
+    <!-- /CONTENT-->
+    <div id="content" class="col-lg-12 content-background">
+      <!-- PAGE HEADER-->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="page-header">
+            <!-- BREADCRUMBS -->
+            <table width="100%">
+              <tr>
+                <td width="95%" align="left">
+                  <ul class="breadcrumb" style="margin-top:15px;">
+                    <li>
+                      <span class="breadcrumTitle">
+                        <a href="#ngdashboard">Dashboard</a>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="breadcrumTitle">
+                        <a href="#trainingcenters" tabindex="1">Training Centers</a>
+                      </span>
+                    </li>
+                    <li class="breadcrumTitle">
+                      Training Center Details
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <!-- /BREADCRUMBS -->
+            <div class="clearfix">
+            </div>
+          </div>
+          <div class="page-div-separator-height"></div>
+        </div>
+      </div>
+      <!-- /PAGE HEADER -->
+      <!-- Add User Form -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box-body-form" style="margin-left:50px;">
+            <div class="row">
+              <div class="col-md-4">
+                <label for="coursename">Center Name</label><br>
+                <lable>{{trainingCenterDetail.centername}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="duration">State</label><br>
+                <lable>{{trainingCenterDetail.state.name}} </label>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="validfrom">City</label><br>
+                <lable>{{trainingCenterDetail.city}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="coursetype">Type</label><br>
+                <lable>{{trainingCenterDetail.type}}</label>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="validfrom">Description</label><br>
+                <lable>{{trainingCenterDetail.description}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="coursetype">Conducted Training Courses</label><br>
+                <lable>{{trainingCenterDetail.conductedTrainingCourses}}</label>
+              </div>
+            </div><br>
+
+            <!--button section-->
+              <div class="row">
+                <div class="form-group col-md-5" style="margin-top: 10%">
+                  <a href="#addtrainingcenter/{{trainingCenterId}}" class="btn btn-success" ng-click="updateTrainingCenter();" style="width:20%;" ng-if="$root.previliges.Manage_UserMgt == true">
+                    Edit&nbsp;
+                  </a>
+                   <button class="btn btn-success" ng-click="deleteTrainingCenter(trainingCenterDetail);" style="width:20%;" ng-if="$root.previliges.Manage_UserMgt == true">
+                    Delete&nbsp;
+                  </button>
+                   <button class="btn btn-success" ng-click="deactivateTrainingCenter(trainingCenterDetail);" ng-cloak ng-if = "trainingCenterDetail.status === 'ACTIVE' && $root.previliges.Manage_UserMgt == true">
+                    Deactivate&nbsp;
+                  </button>
+                  <button class="btn btn-success" ng-click="activateTrainingCenter(trainingCenterDetail);" ng-cloak ng-if = "trainingCenterDetail.status === 'INACTIVE' && $root.previliges.Manage_UserMgt == true">
+                    Activate&nbsp;
+                  </button>
+                  <a href="#trainingcenters" class="btn btn-danger cancelBtn"> Cancel</a>
+                </div>
+              </div>
+              <!--/Button section-->
+          </div>
+        </div>
+      </div>
+      <!-- /Add User Form -->
+    </div>
+  </div>
+  <!-- /CONTENT-->
+</div>

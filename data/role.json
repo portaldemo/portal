@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "Administrator",
+        "description": "This role has privileges for system administration"
+    },
+    {
+        "id": "2",
+        "name": "Trainer",
+        "description": "This role has privileges to create, schedule and evaluate training"      
+    },
+    {
+        "id": "3",
+        "name": "Dealer",
+        "description": "This role has privileges to create and update manpower"
+    },
+    {
+        "id": "4",
+        "name": "Report User",
+        "description": "This role has privileges to view reports"
+    }
+]
