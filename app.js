@@ -128,6 +128,24 @@ portalApp.config(['$routeProvider', '$httpProvider',function($routeProvider, $ht
     templateUrl: 'views/dealer/DealerDetails.html',
     controller: 'DealerDetailsController'
   })
+  
+   .when('/employes', {
+    templateUrl: 'views/employee/Employee.html',
+    controller: 'EmployeeController'
+  })
+   .when('/addEmployee', {
+    templateUrl: 'views/employee/AddEmployee.html',
+    controller: 'AddEmployeeController'
+  })
+   .when('/addEmployee/:id', {
+    templateUrl: 'views/employee/AddEmployee.html',
+    controller: 'AddEmployeeController'
+  })
+
+   .when('/employeeDetails/:id', {
+    templateUrl: 'views/employee/EmployeeDetail.html',
+    controller: 'EmployeeDetailsController'
+  })
   .otherwise({
     redirectTo: '/login'
   });
