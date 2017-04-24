@@ -46,7 +46,6 @@ $(document).ready(function() {
 //           View.removeClass();
 //           View.addClass('right col-md-10 col-lg-10 col-xs-10 col-sm-10');
 //         }
-//
 //     });
 // });
 
@@ -58,10 +57,6 @@ $(function () {
         return this.href == url;
     }).parent('li').addClass('current-page').parent('ul').slideDown().parent().addClass('active');
 });
-
-/** ******  /left menu  *********************** **/
-
-
 
 /** ******  tooltip  *********************** **/
 $(function () {
