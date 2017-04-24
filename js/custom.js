@@ -9,6 +9,7 @@ $(document).ready(function() {
     // }else {
     //     $('.right_col').css("margin-left", "70px");
     // }
+    // alert('hey');
 });
 
 /** ******  left menu  *********************** **/
@@ -17,6 +18,7 @@ $(function () {
     $('#sidebar-menu li').removeClass('active');
 
     $('#sidebar-menu li').click(function () {
+      alert('clicked');
         if ($(this).is('.active')) {
             $(this).removeClass('active');
             $('ul', this).slideUp();
