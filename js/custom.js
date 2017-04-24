@@ -12,6 +12,7 @@ $(document).ready(function() {
     // alert('hey');
 });
 
+<<<<<<< HEAD
 /** ******  left menu  *********************** **/
 $(function () {
     $('#sidebar-menu li ul').slideUp();
@@ -51,6 +52,45 @@ $(function () {
 
     });
 });
+=======
+// /** ******  left menu  *********************** **/
+// $(function () {
+//     $('#sidebar-menu li ul').slideUp();
+//     $('#sidebar-menu li').removeClass('active');
+//
+//     $('#sidebar-menu li').click(function () {
+//         if ($(this).is('.active')) {
+//             $(this).removeClass('active');
+//             $('ul', this).slideUp();
+//             $(this).removeClass('nv');
+//             $(this).addClass('vn');
+//         } else {
+//             $('#sidebar-menu li ul').slideUp();
+//             $(this).removeClass('vn');
+//             $(this).addClass('nv');
+//             $('ul', this).slideDown();
+//             $('#sidebar-menu li').removeClass('active');
+//             $(this).addClass('active');
+//             $('ul', this).css('display','inline-block');
+//         }
+//     });
+//
+//     $('#menu_toggle').click(function () {
+//       $('.left').toggleClass('hidden');
+//         if($('.left').hasClass('hidden'))
+//         {
+//             var View = $('.right');
+//             View.removeClass();
+//             View.addClass('right col-md-12 col-lg-12 col-xs-12 col-sm-12');
+//         }
+//         else {
+//           var View = $('.right');
+//           View.removeClass();
+//           View.addClass('right col-md-10 col-lg-10 col-xs-10 col-sm-10');
+//         }
+//     });
+// });
+>>>>>>> origin/gh-pages
 
 /* Sidebar Menu active class */
 $(function () {
@@ -60,10 +100,6 @@ $(function () {
         return this.href == url;
     }).parent('li').addClass('current-page').parent('ul').slideDown().parent().addClass('active');
 });
-
-/** ******  /left menu  *********************** **/
-
-
 
 /** ******  tooltip  *********************** **/
 $(function () {

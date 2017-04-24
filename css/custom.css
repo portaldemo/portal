@@ -170,9 +170,19 @@
     text-shadow: 1px 1px #000;
   }
 
+<<<<<<< HEAD
   .menu_section>ul {
     margin-top: 10px;
   }
+=======
+nav > li {
+    position: relative;
+    display: inline-block !important;
+}
+.menu_section >ul {
+    margin-top: 10px;
+} 
+>>>>>>> origin/gh-pages
 
   .profile_pic {
     width: 35%;
