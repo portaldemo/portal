@@ -60,3 +60,30 @@
 
 </div>
 <!-- /sidebar menu -->
+
+<script type="text/javascript">
+    
+    /** ******  left menu  *********************** **/
+$(function () {
+    $('#sidebar-menu li ul').slideUp();
+    $('#sidebar-menu li').removeClass('active');
+
+    $('#sidebar-menu li').click(function () {
+        if ($(this).is('.active')) {
+            $(this).removeClass('active');
+            $('ul', this).slideUp();
+            $(this).removeClass('nv');
+            $(this).addClass('vn');
+        } else {
+            $('#sidebar-menu li ul').slideUp();
+            $(this).removeClass('vn');
+            $(this).addClass('nv');
+            $('ul', this).slideDown();
+            $('#sidebar-menu li').removeClass('active');
+            $(this).addClass('active');
+            $('ul', this).css('display','inline-block');
+        }
+    });
+});
+
+</script>

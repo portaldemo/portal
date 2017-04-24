@@ -107,9 +107,13 @@ body.nav-sm .profile {
     text-shadow: 1px 1px #000;
 }
 
+nav > li {
+    position: relative;
+    display: inline-block !important;
+}
 .menu_section >ul {
     margin-top: 10px;
-}
+} 
 
 .profile_pic {
     width: 35%;

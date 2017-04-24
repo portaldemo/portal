@@ -64,3 +64,24 @@
         </ul>
     </nav>
 </div>
+
+
+<script type="text/javascript">
+
+    $('#menu_toggle').click(function () {
+      $('.left').toggleClass('hidden');
+        if($('.left').hasClass('hidden'))
+        {
+            var View = $('.right');
+            View.removeClass();
+            View.addClass('right col-md-12 col-lg-12 col-xs-12 col-sm-12');
+        }
+        else {
+          var View = $('.right');
+          View.removeClass();
+          View.addClass('right col-md-10 col-lg-10 col-xs-10 col-sm-10');
+        }
+
+    });
+
+</script>
