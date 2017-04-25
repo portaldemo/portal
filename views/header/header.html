@@ -85,8 +85,10 @@
           View.addClass('right col-md-10 col-lg-10 col-xs-10 col-sm-10');
         }
 
-        $('#container').highcharts().reflow();
-        $('#container1').highcharts().reflow();
+        if($('#container') != undefined){
+          $('#container').highcharts().reflow();
+          $('#container1').highcharts().reflow();
+        }
 
     });
 

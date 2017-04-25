@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <!-- /CONTENT-->
+    <div id="content" class="col-lg-12 content-background">
+      <!-- PAGE HEADER-->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="page-header">
+            <!-- BREADCRUMBS -->
+            <table width="100%">
+              <tr>
+                <td width="95%" align="left">
+                  <ul class="breadcrumb" style="margin-top:15px;">
+                    <li>
+                      <span class="breadcrumTitle">
+                        <a href="#ngdashboard">Dashboard</a>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="breadcrumTitle">
+                        <a href="#products" tabindex="1">Products</a>
+                      </span>
+                    </li>
+                    <li class="breadcrumTitle">
+                      Product Details
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <!-- /BREADCRUMBS -->
+            <div class="clearfix">
+              <!-- <h3 class="content-title pull-left"> <b>{{userdetail.firstName}}&nbsp;{{userdetail.lastName}} Details</b></h3> -->
+            </div>
+          </div>
+          <div class="page-div-separator-height"></div>
+        </div>
+      </div>
+      <!-- /PAGE HEADER -->
+      <!-- Add User Form -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box-body-form" style="margin-left:50px;">
+            <div class="row">
+              <div class="col-md-4">
+                <label for="firstName">Product Name</label><br>
+                <lable>{{productdetail.productname}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="lastName">Description</label><br>
+                <lable>{{productdetail.description}}</label>
+              </div>
+            </div><br>
+
+            <br>
+            <!--button section-->
+              <div class="row">
+                <div class="form-group col-md-5" style="margin-top: 2%">
+                  <a href="#addproduct/{{userId}}" class="btn btn-success" ng-click="updateProduct();" style="width:20%;" ng-if="$root.previliges.Manage_UserMgt == true">
+                    Edit&nbsp;
+                  </a>
+                   <button class="btn btn-success" ng-click="deleteProduct(productdetail);" style="width:20%;" ng-if="$root.previliges.Manage_UserMgt == true">
+                    Delete&nbsp;
+                  </button>
+                   <button class="btn btn-success" ng-click="deactivateProduct(productdetail);" ng-cloak ng-if = "productdetail.status === 'ACTIVE' && $root.previliges.Manage_UserMgt == true">
+                    Deactivate&nbsp;
+                  </button>
+                  <button class="btn btn-success" ng-click="activateProduct(productdetail);" ng-cloak ng-if = "productdetail.status === 'INACTIVE' && $root.previliges.Manage_UserMgt == true">
+                    Activate&nbsp;
+                  </button>
+                  <a href="#products" class="btn btn-danger cancelBtn"> Cancel</a>
+                </div>
+              </div>
+              <!--/Button section-->
+          </div>
+        </div>
+      </div>
+      <!-- /Add User Form -->
+    </div>
+  </div>
+  <!-- /CONTENT-->
+</div>

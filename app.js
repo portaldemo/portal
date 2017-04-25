@@ -13,7 +13,7 @@ portalApp.config(['$routeProvider', '$httpProvider',function($routeProvider, $ht
     }
     // disable IE ajax request caching
     $httpProvider.defaults.headers.get['If-Modified-Since'] = '0';
-    
+
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
@@ -128,7 +128,7 @@ portalApp.config(['$routeProvider', '$httpProvider',function($routeProvider, $ht
     templateUrl: 'views/dealer/DealerDetails.html',
     controller: 'DealerDetailsController'
   })
-  
+
    .when('/employes', {
     templateUrl: 'views/employee/Employee.html',
     controller: 'EmployeeController'
@@ -146,6 +146,28 @@ portalApp.config(['$routeProvider', '$httpProvider',function($routeProvider, $ht
     templateUrl: 'views/employee/EmployeeDetail.html',
     controller: 'EmployeeDetailsController'
   })
+
+  .when('/employeeNomination', {
+   templateUrl: 'views/employeeNomination/EmployeeNomination.html',
+   controller: 'EmployeeNominationController'
+ })
+
+ .when('/products', {
+    templateUrl: 'views/product/product.html',
+    controller: 'ProductController'
+  })
+ .when('/addproduct', {
+   templateUrl: 'views/product/addproduct.html',
+   controller: 'AddProductController'
+ })
+ .when('/addproduct/:id', {
+    templateUrl: 'views/product/addproduct.html',
+    controller: 'AddProductController'
+  })
+  .when('/product/:id', {
+   templateUrl: 'views/product/productdetails.html',
+   controller: 'ProductDetailsController'
+ })
   .otherwise({
     redirectTo: '/login'
   });
