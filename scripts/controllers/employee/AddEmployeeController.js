@@ -1,33 +1,31 @@
-portalApp.controller('AddEmployeeController', function($scope, $window, $rootScope, $location, $routeParams, 
+portalApp.controller('AddEmployeeController', function($scope, $window, $rootScope, $location, $routeParams,
     $http, SidebarManager, ValidatorService, DealerService, UtilityService) {
-  
-  
-  $scope.init = function () { 
+
+
+  $scope.init = function () {
     $scope.errormassage = "";
     $scope.employeeId = $routeParams.id;
     $scope.dealer = {};
-    
+
     if($scope.employeeId) {
       getEmployeeDetails();
     }
     setTitles();
-    
+
   };
 
 
   $(function(){
-    
+
     $('#dateofbirth').datepicker({
         dateFormat: 'dd-mm-yy'
     });
-    $('#dateofjoining').datepicker({
-        dateFormat: 'dd-mm-yy'
-    });
     
+
 });
 
   function setTitles() {
-    
+
     if($scope.employeeId) {
       $scope.update = true;
      $scope.AddEditEmployeeLabel="Update Employee";
@@ -51,21 +49,20 @@ portalApp.controller('AddEmployeeController', function($scope, $window, $rootSco
   };
 
   function addDealer() {
-  
+
   }
 
   function updateDealer() {
-    
+
   }
 
 
   function getEmployeeDetails() {
     try {
       $rootScope.loading = true;
-      $scope.employeeDetail = {'Id' : 1, 'FirstName' : 'Jennye', 'MiddleName' : 'logeer', 'LastName' :  'samsungs', 
-      'DateofBirth' : '05/02/1993', 'DesignationId' : 1,
-         'ProductHandledId' : 1, 'QulificationId' : 1, 'WorkingCellId' : 1, 'DateofJoining' : '02/11/2016',
-         'ExprienceId':1,'MobileNo':"2661616465",'Remarks':'Is good at Working Cell'};
+      $scope.employeeDetail = {'Id' : 1, 'EmployeeName' : 'Jennye logeer samsungs', 'EmployeeCode' : '10001-Tech-001',
+      'DateofBirth' : '05/02/1993', 'DesignationId' : 1, 'ProductHandledId' : 1, 'QulificationId' : 1, 'DateofJoining' : '02/11/2016',
+       'ExprienceId':1, 'MobileNo':"2661616465",};
     } catch(err) {
       $rootScope.loading = false;
     }

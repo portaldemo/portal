@@ -62,29 +62,39 @@
 <!-- /sidebar menu -->
 
 
-<script type="text/javascript">  
+<script type="text/javascript">
 
-  /** ******  left menu  *********************** **/
+/** ******  left menu  *********************** **/
 $(function () {
   $('#sidebar-menu li ul').slideUp();
   $('#sidebar-menu li').removeClass('active');
 
-  $('#sidebar-menu li').click(function () {
-      if ($(this).is('.active')) {
-          $(this).removeClass('active');
-          $('ul', this).slideUp();
-      } else {
-          $('#sidebar-menu li ul').slideUp();
+  $('#sidebar-menu li').click(function (event) {
+    //  debugger;
+      if(event.currentTarget.parentElement.className.indexOf('child_menu') == -1){
+
+          if ($(this).is('.active')) {
+              $(this).removeClass('active');
+              $('ul', this).slideUp();
+          } else {
+              $('#sidebar-menu li ul').slideUp();
+              $('ul', this).slideDown();
+              $('#sidebar-menu li').removeClass('active');
+              $(this).addClass('active');
+              $('ul', this).css('display','inline');
+          }
+      }else{
           $('ul', this).slideDown();
-          $('#sidebar-menu li').removeClass('active');
-          $(this).addClass('active');
-          $('ul', this).css('display','inline');
       }
+
+
   });
 
-  /*$('#sidebar-menu li ul li').click(function(){
-      $(this).parent().css('display', 'inline');
-  })*/
+  $('#sidebar-menu li ul li').click(function(event){
+      //debugger;
+      $('#'+event.currentTarget.parentElement.id).css('display', 'inline');
+      event.stopPropagation();
+  })
 });
 
 </script>

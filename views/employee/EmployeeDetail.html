@@ -18,7 +18,7 @@
                     </li>
                     <li>
                       <span class="breadcrumTitle">
-                        <a href="#employes" tabindex="1">Employees</a>
+                        <a href="#employes" tabindex="1">Dealer Employees</a>
                       </span>
                     </li>
                     <li class="breadcrumTitle">
@@ -41,20 +41,15 @@
         <div class="col-md-12">
           <div class="box-body-form" style="margin-left:50px;">
             <div class="row">
-              <div class="col-md-4">
-                <label for="dealercode">Fisrt Name</label><br>
-                <lable>{{Employee.FirstName}}</label>
-              </div>
-              <div class="col-md-1"></div>
-              <div class="col-md-4">
-                <label for="dealername">Middle Name</label><br>
-                <lable>{{Employee.MiddleName}}</label>
+              <div class="col-md-9">
+                <label for="dealercode">Employee Name</label><br>
+                <lable>{{Employee.EmployeeName}}</label>
               </div>
             </div><br>
             <div class="row">
               <div class="col-md-4">
-                <label for="dealeraddress">Last Name</label><br>
-                <lable>{{Employee.LastName}}</label>
+                <label for="dealername">Employee Code</label><br>
+                <lable>{{Employee.EmployeeCode}}</label>
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-4">
@@ -81,8 +76,8 @@
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-4">
-                <label for="coursetype">Working Cell</label><br>
-                <lable>{{Employee.WorkingCell}}</label>
+                <label for="phoneNo">Exprience</label><br>
+                <lable>{{Employee.Exprience}}</label>
               </div>
             </div><br>
             <div class="row">
@@ -92,25 +87,13 @@
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-4">
-                <label for="phoneNo">Exprience</label><br>
-                <lable>{{Employee.Exprience}}</label>
-              </div>
-            </div><br>
-            <div class="row">
-              <div class="col-md-4">
                 <label for="mobileNo">Mobile Number</label><br>
                 <lable>{{Employee.MobileNo}}</label>
               </div>
-              <div class="col-md-1"></div>
-              <div class="col-md-4">
-                <label for="phoneNo">Remarks</label><br>
-                <lable>{{Employee.Remarks}}</label>
-              </div>
-            </div><br>
-
+            </div> <br>
             <!--button section-->
               <div class="row">
-                <div class="form-group col-md-5" style="margin-top: 10%">
+                <div class="form-group col-md-5" style="margin-top:2%;">
                   <a href="#addDealer/{{id}}" class="btn btn-success" ng-click="updateDealer();" style="width:20%;" ng-if="$root.previliges.Manage_UserMgt == true">
                     Edit&nbsp;
                   </a>

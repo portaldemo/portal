@@ -12,7 +12,7 @@
               </li>
               <li>
                 <span class="breadcrumTitle">
-                  <a href="#dealers" tabindex="1">Dealers</a>
+                  <a href="#employes" tabindex="1">Dealer Employees</a>
                 </span>
               </li>
               <li class="breadcrumTitle">
@@ -32,49 +32,42 @@
       <!-- /PAGE HEADER -->
       <!-- Add daeler Form -->
       <div class="row">
-        <div class="col-md-12" style="margin-left: 1%;">
+        <div class="col-md-12">
           <div class="box-body">
               <form name="dealerform">
                  <div class="row">
-                  <div class="form-group col-md-5">
-                    <label for="firstName" class="allLabel">First Name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" ng-model="employeeDetail.FirstName" ng-class="{errorborder: employeeValidationErrors.firstName}" ng-maxlength="20" maxlength="10" tabindex="2" ng-keydown="onlyLettersAndNumbers($event)">
-                    <span  class="errorcolor" ng-show="employeeValidationErrors.firstName">{{employeeValidationErrors.dealercodeErrorMsg}}</span>
-                    <span class="errorcolor" ng-show="employeeDetail.firstName.length >= 20">
-                      first name allows max 20 char.</span>
-                  </div>
-                  <div class="col-md-1"></div>
-                  <div class="form-group col-md-5">
-                    <label for="middlename" class="allLabel">Middle Name</label>
-                    <input type="text" class="form-control" id="middlename" placeholder="Enter middle name" ng-model="employeeDetail.MiddleName" ng-class="{errorborder: employeeValidationErrors.middlename}" ng-maxlength="20" maxlength="100" tabindex="2" ng-keydown="onlyLettersAndSomeSpecialChars($event)">
-                    <span  class="errorcolor" ng-show="employeeValidationErrors.middlename">{{employeeValidationErrors.dealerNameErrorMsg}}</span>
-                    <span class="errorcolor" ng-show="employeeDetail.middlename.length >= 20">
-                      middle name allows max 20 char.</span>
+                  <div class="form-group col-md-11">
+                    <label for="employeeName" class="allLabel">Employee Name</label>
+                    <input type="text" class="form-control" id="employeeName" placeholder="Enter employee name" ng-model="employeeDetail.EmployeeName" ng-class="{errorborder: employeeValidationErrors.employeeName}" ng-maxlength="100" maxlength="100" tabindex="2" ng-keydown="onlyLettersAndNumbers($event)">
+                    <span  class="errorcolor" ng-show="employeeValidationErrors.employeeName">{{employeeValidationErrors.dealercodeErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="employeeDetail.employeeName.length >= 100">
+                      first name allows max 100 char.</span>
                   </div>
                 </div>
 
                 <div class="row">
                  <div class="form-group col-md-5">
-                    <label for="lastName" class="allLabel">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" ng-model="employeeDetail.LastName" ng-class="{errorborder: employeeValidationErrors.lastName}" ng-maxlength="20" maxlength="10" tabindex="2" ng-keydown="onlyLettersAndNumbers($event)">
-                    <span  class="errorcolor" ng-show="employeeValidationErrors.lastName">{{employeeValidationErrors.dealercodeErrorMsg}}</span>
-                    <span class="errorcolor" ng-show="employeeDetail.lastName.length >= 20">
+                    <label for="employeeCode" class="allLabel">Employee Code</label>
+                    <input type="text" class="form-control" id="employeeCode" placeholder="Enter last name" ng-model="employeeDetail.EmployeeCode" ng-class="{errorborder: employeeValidationErrors.EmployeeCode}" ng-maxlength="20" maxlength="10" tabindex="2" ng-keydown="onlyLettersAndNumbers($event)">
+                    <span  class="errorcolor" ng-show="employeeValidationErrors.EmployeeCode">{{employeeValidationErrors.dealercodeErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="employeeDetail.EmployeeCode.length >= 20">
                       last name allows max 20 char.</span>
                   </div>
                   <div class="col-md-1"></div>
                   <div class="form-group col-md-5">
                     <label for="dateofbirth" class="allLabel">Date of Birth</label>
-                    <input type="text" class="form-control" id="dateofbirth" placeholder="Select  date" ng-model="employeeDetail.DateofBirth" ng-class="{errorborder: employeeValidationErrors.dateofbirth}" ng-maxlength="40" maxlength="15" tabindex="4">
+                    <input type="text" class="form-control" id="dateofbirth" placeholder="Select birth date" ng-model="employeeDetail.DateofBirth" ng-class="{errorborder: employeeValidationErrors.dateofbirth}" ng-maxlength="40" maxlength="15" tabindex="4">
                     <span  class="errorcolor" ng-show="employeeValidationErrors.dateofbirth">{{employeeValidationErrors.courseValidFromErrorMsg}}</span>
-                  </div>              
+                  </div>
                 </div>
 
                 <div class="row">
                   <div class="form-group col-md-5">
                     <label for="designation" class="allLabel">Designation</label>
-                    <select class="form-control" id="stateId" ng-model='employeeDetail.DesignationId'>
+                    <select class="form-control" id="stateId" ng-model='employeeDetail.DesignationId' placeholder='select'>
+                      <option value="" selected disabled>Select Designation</option>
                       <option value="1">Trainee</option>
-                      <option value="2">TL</option>
+                      <option value="2">Technician</option>
                       <option value="3">Manager</option>
                     </select>
                   </div>
@@ -82,9 +75,10 @@
                   <div class="form-group col-md-5">
                     <label for="producthandled" class="allLabel">Product Handled</label><br>
                    <select class="form-control" id="productHandledId" ng-model='employeeDetail.ProductHandledId'>
-                      <option value="1">Abc</option>
-                      <option value="2">pqr</option>
-                      <option value="3">xsd</option>
+                     <option value="" selected disabled>Select Product Handled</option>
+                      <option value="1">2W</option>
+                      <option value="2">3W</option>
+                      <option value="3">4W</option>
                     </select>
                   </div>
                 </div>
@@ -93,6 +87,7 @@
                   <div class="form-group col-md-5">
                     <label for="qualification" class="allLabel">Qualification</label>
                     <select class="form-control" id="qualificationId" ng-model='employeeDetail.QulificationId'>
+                      <option value="" selected disabled>Select Qulification</option>
                       <option value="1">Master</option>
                       <option value="2">TL</option>
                       <option value="3">BE</option>
@@ -100,27 +95,9 @@
                   </div>
                   <div class="col-md-1"></div>
                   <div class="form-group col-md-5">
-                    <label for="workingcell" class="allLabel">Working Cell</label><br>
-                   <select class="form-control" id="workingcellId" ng-model='employeeDetail.WorkingCellId'>
-                      <option value="1">A</option>
-                      <option value="2">B</option>
-                      <option value="3">C</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="row">
-                   <div class="form-group col-md-5">
-                    <label for="dateofjoining" class="allLabel">Date of Joining</label>
-                    <input type="text" class="form-control" id="dateofjoining" placeholder="Select  date" ng-model="employeeDetail.DateofJoining" ng-class="{errorborder: employeeValidationErrors.dateofjoining}" ng-maxlength="40" maxlength="15" tabindex="4">
-                    <span  class="errorcolor" ng-show="employeeValidationErrors.dateofjoining">{{employeeValidationErrors.courseValidFromErrorMsg}}</span>
-                    <span class="errorcolor" ng-show="employeeDetail.dateofjoining.length >= 15">
-                      Course name allows max 15 char.</span>
-                  </div> 
-                  <div class="col-md-1"></div>
-                  <div class="form-group col-md-5">
                     <label for="experince" class="allLabel">Experince</label><br>
                    <select class="form-control" id="experinceId" ng-model='employeeDetail.ExprienceId'>
+                     <option value="" selected disabled>Select Experince</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">above</option>
@@ -129,20 +106,20 @@
                 </div>
 
                 <div class="row">
+                   <div class="form-group col-md-5">
+                    <label for="dateofjoining" class="allLabel">Date of Joining</label>
+                    <input type="text" class="form-control" id="dateofjoining" placeholder="Select joining date" ng-model="employeeDetail.DateofJoining" ng-class="{errorborder: employeeValidationErrors.dateofjoining}" ng-maxlength="40" maxlength="15" tabindex="4">
+                    <span  class="errorcolor" ng-show="employeeValidationErrors.dateofjoining">{{employeeValidationErrors.courseValidFromErrorMsg}}</span>
+                    <span class="errorcolor" ng-show="employeeDetail.dateofjoining.length >= 15">
+                      Course name allows max 15 char.</span>
+                  </div>
+                  <div class="col-md-1"></div>
                   <div class="form-group col-md-5">
                     <label for="mobileNo" class="allLabel">Mobile Number</label>
                     <input type="text" class="form-control" id="mobileNo" placeholder="Enter contact mobile number" ng-model="employeeDetail.MobileNo" ng-class="{errorborder: employeeValidationErrors.mobileNo}" ng-maxlength="10" maxlength="10" tabindex="2" ng-keydown="onlyNumbers($event)">
                     <span  class="errorcolor" ng-show="employeeValidationErrors.mobileNo">{{employeeValidationErrors.mobilenumberErrorMsg}}</span>
                     <span class="errorcolor" ng-show="employeeDetail.mobileNo.length >= 10">
                       Mobile number allows max 10 char.</span>
-                  </div>
-                  <div class="col-md-1"></div>
-                  <div class="form-group col-md-5">
-                    <label for="remarks" class="allLabel">Remarks</label><br>
-                    <input type="text" class="form-control" id="remarks" placeholder="Enter remarks" ng-model="employeeDetail.Remarks" ng-class="{errorborder: employeeValidationErrors.remarks}" ng-maxlength="50" maxlength="15" tabindex="2" ng-keydown="onlyNumbers($event)">
-                    <span  class="errorcolor" ng-show="employeeValidationErrors.remarks">{{employeeValidationErrors.phoneNumberErrorMsg}}</span>
-                    <span class="errorcolor" ng-show="employeeDetail.remarks.length >= 50">
-                     remarks allows max 50 char.</span>
                   </div>
                 </div>
 
@@ -165,4 +142,3 @@
         </div>
       </div>
       <!-- /Add dealer Form -->
- 
