@@ -1,23 +1,18 @@
 <div class="nav_menu">
     <nav class="" role="navigation">
         <div class="nav toggle">
-            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            <a id="menu_toggle" title="Hide Left Menubar" style="cursor:-webkit-zoom-in"><i class="fa fa-bars"></i></a>
         </div>
         <ul class="nav navbar-right top-nav iconsbar">
             <li class="dropdown headerMenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                 <ul class="dropdown-menu message-dropdown">
                     <li class="message-preview">
                         <a href="javascript:;">
                             <div class="media">
-                                <span class="pull-left">
-                                    <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                </span>
                                 <div class="media-body">
-                                    <h5 class="media-heading"><strong>Portal Admin</strong>
-                                    </h5>
                                     <p class="small text-muted"><i class="fa fa-clock-o"></i> Monday, 25th Apr, 2017</p>
-                                    <p>Engine Experts training schedule @Chennai</p>
+                                    <p>Engine Experts training schedule at Chennai training center</p>
                                 </div>
                             </div>
                         </a>
@@ -25,40 +20,28 @@
                     <li class="message-preview">
                         <a href="javascript:;">
                             <div class="media">
-                                <span class="pull-left">
-                                    <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                </span>
                                 <div class="media-body">
-                                    <h5 class="media-heading"><strong>Trainer</strong>
-                                    </h5>
                                     <p class="small text-muted"><i class="fa fa-clock-o"></i> Tomorrow</p>
-                                    <p>Motorcycle basic training schedule @Pune</p>
+                                    <p>Motorcycle basic training schedule at Pune training center</p>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="message-footer">
-                        <a href="javascript:;">Read All New Messages</a>
+                    <li class="message-preview">
+                        <div class="text-center">
+                          <strong><a href="javascript:;">See All Notifications <i class="fa fa-angle-right"></i></a></strong>
+                        </div>
                     </li>
                 </ul>
             </li>
-            <li class="dropdown headerMenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                <ul class="dropdown-menu alert-dropdown">
-                    <li><a href="javascript:;">Alert Name <span class="label label-default">Alert Badge</span></a></li>
-                    <li><a href="javascript:;">Alert Name <span class="label label-primary">Alert Badge</span></a></li>
-                    <li><a href="javascript:;">Alert Name <span class="label label-success">Alert Badge</span></a></li>
-                    <li class="divider"></li>
-                    <li><a href="javascript:;">View All</a></li>
-                </ul>
-            </li>
+
             <li class="dropdown headerMenu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Portal Admin <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="javascript:;"><i class="fa fa-fw fa-user"></i> Help</a></li>
-                    <li><a href="#/changepassword/token"><i class="fa fa-fw fa-envelope"></i>Password</a></li>
+                    <li style="margin-top:5px;"><a href="javascript:;"><i class="fa fa-fw fa-life-ring"></i> Help</a></li>
+                    <li><a href="#/changepassword/token"><i class="fa fa-fw fa-key"></i> Change Password</a></li>
                     <li class="divider"></li>
-                    <li><a href="#/login"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
+                    <li><a href="#/login"><i class="fa fa-fw fa-sign-out"></i> Log Out</a></li>
                 </ul>
             </li>
         </ul>
@@ -78,16 +61,22 @@
             var View = $('.right');
             View.removeClass();
             View.addClass('right col-md-12 col-lg-12 col-xs-12 col-sm-12');
+            $('#menu_toggle').removeAttr('title');
+            $('#menu_toggle').attr('title', 'Show Left Menubar');
+            $('#menu_toggle').css('cursor', '-webkit-zoom-out');
         }
         else {
           var View = $('.right');
           View.removeClass();
           View.addClass('right col-md-10 col-lg-10 col-xs-10 col-sm-10');
+          $('#menu_toggle').removeAttr('title');
+          $('#menu_toggle').attr('title', 'Hide Left Menubar');
+          $('#menu_toggle').css('cursor', '-webkit-zoom-in');
         }
 
-        if($('#container') != undefined){
-          $('#container').highcharts().reflow();
-          $('#container1').highcharts().reflow();
+        if(window.location.href.substring(window.location.href.lastIndexOf('/')+1, window.location.href.length) == 'dashboard'){
+          $('#trainUntrainStatusGraphContainer').highcharts().reflow();
+          $('#employeeEvaluationStatusGraphContainer').highcharts().reflow();
         }
 
     });

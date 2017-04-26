@@ -62,17 +62,16 @@
                   <a href="javascript:;" class="btn btn-danger cancelBtn" tabindex="7" style="width:250px;;"> Reset</a>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <h4 class="text-success" style="text-align:center;display:none;" id='successMsg'> Dealer Employee Nomination saved successfully...!!</h4>
-                <div>
+
+              <div class="col-lg-12" style="text-align:center;display:none;" id='successMsg'>
+                <h4 class="text-success"> Dealer Employee Nomination saved successfully...!!</h4>
               </div>
-                <div id='nomineeEmployeeListDiv' class="x_content" style="display:none;">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <h4 class="text-warning" style="text-align:center;display:none;" id='warningMsg'> Please select atleast one employee nomination...!!</h4>
-                    <div>
-                  </div>
+              <div class="col-lg-12" style="text-align:center;display:none;" id='warningMsg'>
+                <h4 class="text-warning"> Please select atleast one employee nomination...!!</h4>
+            </div>
+
+              <div class="row" id='nomineeEmployeeListDiv' style="display:none;">
+                <div class="x_content">
                     <table id="example" class="table table-striped responsive-utilities jambo_table">
                         <thead>
                             <tr class="headings">
@@ -100,7 +99,6 @@
                             </tr>
                           </tbody>
                     </table>
-
                     <div class="row" style="text-align:center;">
                       <div class="form-group col-lg-12">
                         <button class="btn btn-success submitBtn" ng-click="saveNomineeEmployee();" tabindex="6" style="width:200px;">
@@ -109,13 +107,7 @@
                         <a href="javascript:;" class="btn btn-danger cancelBtn" tabindex="7" style="width:200px;"> Reset</a>
                       </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <br />
-        <br />
-        <br />
-
+                  </div>
+              </div>
     </div>
 </div>

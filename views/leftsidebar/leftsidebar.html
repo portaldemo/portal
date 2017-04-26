@@ -1,7 +1,16 @@
 <div class="navbar nav_title" style="border: 0;">
-    <a href="#/dashboard" class="site_title"><i class="fa fa-cogs"></i> <span style="font-size:25px;"><b>Portal</b></span></a>
+    <a href="#/dashboard" class="site_title"><i class="fa fa-cogs"></i> <span><b>Training Portal</b></span></a>
 </div>
 <div class="clearfix"></div>
+<div class="profile clearfix">
+    <div class="profile_pic">
+      <img src="images/user.png" alt="..." class="img-circle profile_img">
+    </div>
+    <div class="profile_info">
+      <span>Welcome,</span>
+      <h2>Portal Admin</h2>
+    </div>
+  </div>
 <br />
 
 <!-- sidebar menu -->
@@ -9,10 +18,9 @@
 
   <div class="menu_section">
       <ul class="nav side-menu">
-          <li><a href="#/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard </a> </li>
-
-          <li><a href="javascript:;" data-toggle="collapse" data-target="#master"><i class="fa fa-bar-chart-o"></i> Master <span class="fa fa-chevron-down"></span></a>
-              <ul id="master" class="nav child_menu collapse">
+          <li><a href="#/dashboard"><i class="fa fa-dashboard"></i> Dashboard </a> </li>
+          <li><a href="javascript:;" data-toggle="collapse" data-target="#master"><i class="fa fa-tasks"></i> Master <span class="fa fa-chevron-right"></span></a>
+              <ul id="master" class="nav child_menu collapse li-circle">
                   <li><a href="#/users">Users </a> </li>
                   <li><a href="#/roles">Roles </a> </li>
                   <li><a href="#/products">Product</a></li>
@@ -22,14 +30,14 @@
               </ul>
           </li>
 
-          <li><a href="javascript:;" data-toggle="collapse" data-target="#dealer"><i class="fa fa-industry"></i> Dealer <span class="fa fa-chevron-down"></span></a>
+          <li><a href="javascript:;" data-toggle="collapse" data-target="#dealer"><i class="fa fa-industry"></i> Dealer <span class="fa fa-chevron-right"></span></a>
               <ul id="dealer" class="nav child_menu collapse">
                   <li><a href="#/dealers">Dealer Management</a></li>
                   <li><a href="javascript:;">Dealer Category Mapping </a></li>
               </ul>
           </li>
 
-          <li><a href="javascript:;" data-toggle="collapse" data-target="#employee"><i class="fa fa-user-circle-o"></i> Employee <span class="fa fa-chevron-down"></span></a>
+          <li><a href="javascript:;" data-toggle="collapse" data-target="#employee"><i class="fa fa-user-circle-o"></i> Employee <span class="fa fa-chevron-right"></span></a>
               <ul id="employee" class="nav child_menu collapse">
                   <li><a href="#/employes">Employee Management</a></li>
                   <li><a href="#/employeeNomination">Employee Nomination </a></li>
@@ -37,7 +45,7 @@
               </ul>
           </li>
 
-          <li><a href="javascript:;" data-toggle="collapse" data-target="#training"><i class="fa fa-edit"></i> Training <span class="fa fa-chevron-down"></span></a>
+          <li><a href="javascript:;" data-toggle="collapse" data-target="#training"><i class="fa fa-cog"></i> Training <span class="fa fa-chevron-right"></span></a>
               <ul id="training" class="nav child_menu collapse">
                   <li><a href="#/trainingcourses">Training Course</a></li>
                   <li><a href="#/trainingcenters">Training Center </a></li>
@@ -47,12 +55,12 @@
           </li>
 
           <li><a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-bar-chart-o"></i> Reports
-              <span class="fa fa-chevron-down"></span></a>
+              <span class="fa fa-chevron-right"></span></a>
               <ul id="demo" class="nav child_menu collapse">
-                  <li><a href="javascript:;">Employee training status report</a> </li>
+                  <li><a href="javascript:;">Employee training Status Report</a> </li>
                   <li><a href="javascript:;">Training Gap Report</a> </li>
-                  <li><a href="javascript:;">L1 training course report</a></li>
-                  <li><a href="javascript:;">L2 training course report </a></li>
+                  <li><a href="javascript:;">L1 training Course Report</a></li>
+                  <li><a href="javascript:;">L2 training Course Report </a></li>
               </ul>
           </li>
       </ul>
@@ -70,18 +78,26 @@ $(function () {
   $('#sidebar-menu li').removeClass('active');
 
   $('#sidebar-menu li').click(function (event) {
-    //  debugger;
+      //debugger;
       if(event.currentTarget.parentElement.className.indexOf('child_menu') == -1){
+          $('#sidebar-menu li span').removeClass();
+          $('#sidebar-menu li span').addClass('fa fa-chevron-right');
 
           if ($(this).is('.active')) {
               $(this).removeClass('active');
               $('ul', this).slideUp();
+              if(event.currentTarget.firstElementChild.firstElementChild.className != 'fa fa-dashboard'){
+                  event.currentTarget.firstElementChild.lastElementChild.setAttribute('class', 'fa fa-chevron-right');
+              }
           } else {
               $('#sidebar-menu li ul').slideUp();
               $('ul', this).slideDown();
               $('#sidebar-menu li').removeClass('active');
               $(this).addClass('active');
               $('ul', this).css('display','inline');
+              if(event.currentTarget.firstElementChild.firstElementChild.className != 'fa fa-dashboard'){
+                event.currentTarget.firstElementChild.lastElementChild.setAttribute('class', 'fa fa-chevron-down');
+              }
           }
       }
   });

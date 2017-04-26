@@ -27,12 +27,12 @@ portalApp.controller('DashboardController', function($scope, $window, $rootScope
   	$(function () {
 
 
-      $('#container').highcharts({
+      $('#trainUntrainStatusGraphContainer').highcharts({
          chart: {
         type: 'column'
       },
       title: {
-          text: 'Trained - Untrained Status'
+          text: 'State wise Trained - Untrained Status'
       },
       subtitle: {
           text: 'Yearly Manpower status',
@@ -81,14 +81,14 @@ portalApp.controller('DashboardController', function($scope, $window, $rootScope
       }]
     });
 
-        $('#container1').highcharts({
+        $('#employeeEvaluationStatusGraphContainer').highcharts({
             chart: {
                 type: 'line',
                 marginRight: 130,
                 marginBottom: 25
             },
             title: {
-                text: 'Employee Evaluation Status',
+                text: 'Designation wise Employee Evaluation Status',
                 x: -20 //center
             },
             subtitle: {
