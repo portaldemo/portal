@@ -1,25 +1,31 @@
-portalApp.controller('AddTrainingScheduleController', function($scope, $window, $rootScope, $location, $routeParams, 
+portalApp.controller('AddTrainingScheduleController', function($scope, $window, $rootScope, $location, $routeParams,
     $http, SidebarManager, ValidatorService, TrainingScheduleService, UtilityService) {
-  
-  $scope.init = function () { 
+
+  $scope.init = function () {
     $scope.errormassage = "";
     $scope.trainingScheduleID = $routeParams.id;
-    $scope.trainingSchedule = {};
-    
+    $scope.trainingScheduleDetail = {'id' : 0};
+
     if($scope.trainingScheduleID) {
       getTrainingScheduleDetails();
     }
     setTitles();
-    
+
   };
 
 
   $(function(){
-    
-    $('#validfrom').datepicker({
+
+    $('#courseValidFrom').datepicker({
         dateFormat: 'dd-mm-yy'
     });
-    
+    $('#startDate').datepicker({
+        dateFormat: 'dd-mm-yy'
+    });
+    $('#endDate').datepicker({
+        dateFormat: 'dd-mm-yy'
+    });
+
 });
 
   function setTitles() {
@@ -46,24 +52,30 @@ portalApp.controller('AddTrainingScheduleController', function($scope, $window, 
   };
 
   function addTrainingSchedule() {
-  
+
   }
 
   function updateTrainingSchedule() {
-    
+
   }
 
 
   function getTrainingScheduleDetails() {
     try {
       $rootScope.loading = true;
-      $scope.trainingScheduleDetail = {'id' : 1, 'stateId' : 1, 'trainingCenterId' : 1, 'trainingCourseId' : 2, 
-      'courseDuration' : '2', 'courseValidFrom' : '10/03/2017', 'startDate' : '22/04/2017', 'endDate' : '25/04/2017', 
+      $scope.trainingScheduleDetail = {'id' : 1, 'stateId' : 1, 'trainingCenterId' : 1, 'trainingCourseId' : 2,
+      'courseDuration' : '2', 'courseValidFrom' : '10/03/2017', 'startDate' : '22/04/2017', 'endDate' : '25/04/2017',
       'trainerName' : 'Mr. Arun Jadhav', 'description' : 'All Courses conducted at this training center' };
     } catch(err) {
       $rootScope.loading = false;
     }
-  }
+  };
+
+  $scope.setValidFromDate = function(value){
+    if($('#trainingCourseId').val() != ''){
+      $scope.trainingScheduleDetail.courseValidFrom = '22/04/2017';
+    }
+  };
 
   $scope.onlyLettersAndSomeSpecialChars = function(event) {
     ValidatorService.onlyLetters(event);

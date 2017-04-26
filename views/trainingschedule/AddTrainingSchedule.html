@@ -38,8 +38,8 @@
                  <div class="row">
                   <div class="form-group col-md-5">
                     <label for="stateId" class="allLabel">State</label>
-                    <select class="form-control" id="stateId" ng-model='trainingSchedule.stateId'>
-                      <option value="0">Select State</option>
+                    <select class="form-control" id="stateId" ng-model='trainingScheduleDetail.stateId'>
+                      <option value="" selected disabled>Select State</option>
                       <option value="1">Maharashtra</option>
                       <option value="2">Karnataka</option>
                       <option value="3">Punjab</option>
@@ -50,7 +50,7 @@
                   <div class="form-group col-md-5">
                     <label for="trainingCenterId" class="allLabel">Training Center Name</label>
                     <select class="form-control" id="trainingCenterId" ng-model='trainingScheduleDetail.trainingCenterId'>
-                      <option value="0">Select Center</option>
+                      <option value="" selected disabled>Select Center</option>
                       <option value="1">Pune Training Center</option>
                       <option value="2">Nashik Training Center</option>
                       <option value="3">Kolhapur Training Center</option>
@@ -62,8 +62,8 @@
                 <div class="row">
                   <div class="form-group col-md-5">
                     <label for="trainingCourseId" class="allLabel">Training Course</label>
-                    <select class="form-control" id="trainingCourseId" ng-model='trainingScheduleDetail.trainingCourseId'>
-                      <option value="0">Select Course</option>
+                    <select class="form-control" id="trainingCourseId" ng-model='trainingScheduleDetail.trainingCourseId' ng-change='setValidFromDate(this.value)'>
+                      <option value="" selected disabled>Select Course</option>
                       <option value="1">MotorCycle Basic</option>
                       <option value="2">Engine Experts</option>
                       <option value="3">Spare Parts Repairing</option>
@@ -80,7 +80,7 @@
                 <div class="row">
                   <div class="form-group col-md-5">
                     <label for="startDate" class="allLabel">Training Start Date</label>
-                    <input type="text" class="form-control" id="startDate" placeholder="Select training start date" ng-model="trainingScheduleDetail.startDate" tabindex="
+                    <input type="text" class="form-control" id="startDate" placeholder="Select training start date" ng-model="trainingScheduleDetail.startDate" tabindex="8">
                   </div>
                   <div class="col-md-1"></div>
                   <div class="form-group col-md-5">
@@ -98,33 +98,55 @@
                   <div class="col-md-1"></div>
                   <div class="form-group col-md-5">
                     <label for="description" class="allLabel">Training Schedule Description</label><br>
-                    <input type="texttrainingScheduleDetailclass="form-control" id="description" placeholder="Enter schedule brief description"  ng-model="trainingCenterDetail.description" tabindex="7">
+                    <input type="text" class="form-control" id="description" placeholder="Enter schedule brief description"  ng-model="trainingScheduleDetail.description" tabindex="7">
                   </div>
                 </div>
-            
+
                 <br>
 
                   <div class="row">
-                  <div class="col-md-11">                
+                  <div class="col-md-11">
                     <div class="bs-example" style="border: 1px solid #ddd; padding: 10px;">
                       <label class="allLabel">Training Courses conducted</label>
-                      <table style="width: 100%;">
+                      <table style="width: 100%;" ng-show='{{trainingScheduleDetail.id == 1}}'>
                         <tr>
-                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
                           <td style="width: 22%;">Motorcycle Basic</td>
                           <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
                           <td style="width: 22%;">Engine Experts</td>
-                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
                           <td style="width: 22%;">Electrical Experts</td>
-                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
-                          <td style="width: 22%;">Diesel Electrical Basic</td>                        
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
+                          <td style="width: 22%;">Diesel Electrical Basic</td>
                         </tr>
                         <tr>
                           <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
                           <td style="width: 22%;">RE Diesel Face Lift</td>
-                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
                           <td style="width: 22%;">Service Advisor Training</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
+                          <td style="width: 22%;">Product Specialist</td>
                           <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 22%;">Spare Parts Training</td>
+                        </tr>
+                      </table>
+                      <table style="width: 100%;" ng-show='{{trainingScheduleDetail.id == 0}}'>
+                        <tr>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" ></td>
+                          <td style="width: 22%;">Motorcycle Basic</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 22%;">Engine Experts</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" ></td>
+                          <td style="width: 22%;">Electrical Experts</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" ></td>
+                          <td style="width: 22%;">Diesel Electrical Basic</td>
+                        </tr>
+                        <tr>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 22%;">RE Diesel Face Lift</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" ></td>
+                          <td style="width: 22%;">Service Advisor Training</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" ></td>
                           <td style="width: 22%;">Product Specialist</td>
                           <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
                           <td style="width: 22%;">Spare Parts Training</td>
@@ -153,4 +175,3 @@
         </div>
       </div>
       <!-- /Add trainingcourse Form -->
- 

@@ -1,4 +1,5 @@
 
+
       <!-- PAGE HEADER-->
       <div class="row">
         <div class="col-lg-12">
@@ -47,7 +48,7 @@
                   <div class="form-group col-md-5">
                     <label for="duration" class="allLabel">State</label>
                     <select class="form-control" id="stateId" ng-model='trainingCenterDetail.stateId'>
-                      <option value="0">Select State</option>
+                      <option value="" selected disabled>Select State</option>
                       <option value="1">Maharashtra</option>
                       <option value="2">Karnataka</option>
                       <option value="3">Punjab</option>
@@ -81,15 +82,37 @@
                       <input type="text" class="form-control" id="description" placeholder="Enter center brief description"  ng-model="trainingCenterDetail.description" tabindex="7">
                     </div>
 
-                  </div>                
+                  </div>
                 </div>
                 <br>
 
                   <div class="row">
-                  <div class="col-md-11">                
+                  <div class="col-md-11">
                     <div class="bs-example" style="border: 1px solid #ddd; padding: 10px;">
                       <label class="allLabel">Training Courses conducted</label>
-                      <table style="width: 100%;">
+                      <table style="width: 100%;" ng-show='{{trainingCenterDetail.id == 1}}'>
+                        <tr>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
+                          <td style="width: 22%;">Motorcycle Basic</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 22%;">Engine Experts</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
+                          <td style="width: 22%;">Electrical Experts</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
+                          <td style="width: 22%;">Diesel Electrical Basic</td>
+                        </tr>
+                        <tr>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 22%;">RE Diesel Face Lift</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                          <td style="width: 22%;">Service Advisor Training</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
+                          <td style="width: 22%;">Product Specialist</td>
+                          <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1" checked></td>
+                          <td style="width: 22%;">Spare Parts Training</td>
+                        </tr>
+                      </table>
+                      <table style="width: 100%;" ng-show='{{trainingCenterDetail == null}}'>
                         <tr>
                           <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
                           <td style="width: 22%;">Motorcycle Basic</td>
@@ -98,7 +121,7 @@
                           <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
                           <td style="width: 22%;">Electrical Experts</td>
                           <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
-                          <td style="width: 22%;">Diesel Electrical Basic</td>                        
+                          <td style="width: 22%;">Diesel Electrical Basic</td>
                         </tr>
                         <tr>
                           <td style="width: 3%;"><input type="checkbox" id="inlineCheckbox1" value="option1"></td>
@@ -134,4 +157,3 @@
         </div>
       </div>
       <!-- /Add trainingcourse Form -->
- 

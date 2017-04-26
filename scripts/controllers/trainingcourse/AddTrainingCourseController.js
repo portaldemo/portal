@@ -1,25 +1,25 @@
-portalApp.controller('AddTrainingCourseController', function($scope, $window, $rootScope, $location, $routeParams, 
+portalApp.controller('AddTrainingCourseController', function($scope, $window, $rootScope, $location, $routeParams,
     $http, SidebarManager, ValidatorService, TrainingCourseService, UtilityService) {
-  
-  $scope.init = function () { 
+
+  $scope.init = function () {
     $scope.errormassage = "";
     $scope.trainingCourseId = $routeParams.id;
-    $scope.trainingCourse = {};
-    
+    $scope.trainingCourseDetail = {'id' : 0};
+
     if($scope.trainingCourseId) {
       getTrainingCourseDetails();
     }
     setTitles();
-    
+
   };
 
 
   $(function(){
-    
+
     $('#validfrom').datepicker({
         dateFormat: 'dd-mm-yy'
     });
-    
+
 });
 
   function setTitles() {
@@ -46,18 +46,18 @@ portalApp.controller('AddTrainingCourseController', function($scope, $window, $r
   };
 
   function addTrainingCourse() {
-  
+
   }
 
   function updateTrainingCourse() {
-    
+
   }
 
 
   function getTrainingCourseDetails() {
     try {
       $rootScope.loading = true;
-      $scope.trainingCourseDetail = {'id' : 1, 'coursename' : 'Engine Experts', 'duration' : '2', 'type' : 'Field', 
+      $scope.trainingCourseDetail = {'id' : 1, 'coursename' : 'Engine Experts', 'duration' : '2', 'type' : 'Field',
         'validfrom' : '01/04/2017', 'qualification' : 'Diploma, Graduation', 'description' : 'Engine Expert for all products and vehicles',
                       'requiredTrainingCourses' : 'MotorCycle Basic'};
     } catch(err) {

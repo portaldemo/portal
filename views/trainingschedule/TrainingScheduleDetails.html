@@ -42,41 +42,52 @@
           <div class="box-body-form" style="margin-left:50px;">
             <div class="row">
               <div class="col-md-4">
-                <label for="coursename">Center Name</label><br>
-                <lable>{{trainingCenterDetail.centername}}</label>
+                <label for="statename">State</label><br>
+                <lable>{{trainingScheduleDetail.state.name}} </lable>
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-4">
-                <label for="duration">State</label><br>
-                <lable>{{trainingCenterDetail.state.name}} </label>
+                <label for="centername">Center Name</label><br>
+                <lable>{{trainingScheduleDetail.trainingcenter.name}}</lable>
               </div>
             </div><br>
             <div class="row">
               <div class="col-md-4">
-                <label for="validfrom">City</label><br>
-                <lable>{{trainingCenterDetail.city}}</label>
+                <label for="coursename">Training Course</label><br>
+                <lable>{{trainingScheduleDetail.trainingcourse.name}}</label>
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-4">
-                <label for="coursetype">Type</label><br>
-                <lable>{{trainingCenterDetail.type}}</label>
+                <label for="validFrom">Valid From</label><br>
+                <lable>{{trainingScheduleDetail.trainingcourse.validFrom}}</label>
               </div>
             </div><br>
             <div class="row">
               <div class="col-md-4">
-                <label for="validfrom">Description</label><br>
-                <lable>{{trainingCenterDetail.description}}</label>
+                <label for="startDate">Start Date</label><br>
+                <lable>{{trainingScheduleDetail.startDate}}</label>
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-4">
-                <label for="coursetype">Conducted Training Courses</label><br>
-                <lable>{{trainingCenterDetail.conductedTrainingCourses}}</label>
+                <label for="endDate">End Date</label><br>
+                <lable>{{trainingScheduleDetail.endDate}}</label>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="trainerName">Trainer Name</label><br>
+                <lable>{{trainingScheduleDetail.trainerName}}</label>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <label for="description">Description</label><br>
+                <lable>{{trainingScheduleDetail.description}}</label>
               </div>
             </div><br>
 
             <!--button section-->
               <div class="row">
-                <div class="form-group col-md-5" style="margin-top: 10%">
+                <div class="form-group col-md-5" style="margin-top: 2%">
                   <a href="#addtrainingcenter/{{trainingCenterId}}" class="btn btn-success" ng-click="updateTrainingCenter();" style="width:20%;" ng-if="$root.previliges.Manage_UserMgt == true">
                     Edit&nbsp;
                   </a>
@@ -89,7 +100,7 @@
                   <button class="btn btn-success" ng-click="activateTrainingCenter(trainingCenterDetail);" ng-cloak ng-if = "trainingCenterDetail.status === 'INACTIVE' && $root.previliges.Manage_UserMgt == true">
                     Activate&nbsp;
                   </button>
-                  <a href="#trainingcenters" class="btn btn-danger cancelBtn"> Cancel</a>
+                  <a href="#trainingschedules" class="btn btn-danger cancelBtn"> Cancel</a>
                 </div>
               </div>
               <!--/Button section-->

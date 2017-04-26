@@ -14,14 +14,14 @@ portalApp.controller('AddEmployeeController', function($scope, $window, $rootSco
 
   };
 
-
   $(function(){
 
     $('#dateofbirth').datepicker({
         dateFormat: 'dd-mm-yy'
     });
-    
-
+    $('#dateofjoining').datepicker({
+        dateFormat: 'dd-mm-yy'
+    });
 });
 
   function setTitles() {
