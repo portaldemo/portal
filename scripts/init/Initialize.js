@@ -11,7 +11,7 @@ portalApp.run(['$rootScope', '$cookieStore', '$window', "$interval", "$location"
 
     $rootScope.isLeftMenuRequired = false;
     $rootScope.isNavbarRequired = false;
-    
+
     $rootScope.emailId = 'admin@portal.com'
     $rootScope.password = 'Admin@123'
 
@@ -29,7 +29,7 @@ portalApp.run(['$rootScope', '$cookieStore', '$window', "$interval", "$location"
         "changePassword":"/Automation/auth/createpassword",
         "verifyPasswordToken":"/Automation/auth/verifytoken",
         "forgotPassword":"/Automation/auth/forgotpassword",
-        "updatePassword":"/Automation/user/changepassword"     
+        "updatePassword":"/Automation/user/changepassword"
     };
 
     $rootScope.routingUrls = {};
@@ -137,7 +137,7 @@ portalApp.run(['$rootScope', '$cookieStore', '$window', "$interval", "$location"
     };
 
     $rootScope.isDashboardVisible = function() {
-        return true;      
+        return true;
     }
 
   /**
@@ -184,7 +184,7 @@ portalApp.run(['$rootScope', '$cookieStore', '$window', "$interval", "$location"
 
     // Login controller
     "passwordBlank" : "Password should not be blank.",
-    "emailBlank" : "Email  should not be blank.",
+    "emailBlank" : "Email should not be blank.",
     "emailInvalid" : "Invalid Email.",
 
     // Change Password controller
@@ -201,7 +201,7 @@ portalApp.run(['$rootScope', '$cookieStore', '$window', "$interval", "$location"
     "passwordLinkSent" : "A change password link was just sent to the email address that was registered with your account.",
 
     // Update Password controller : already covered.
-    
+
     // Add User controller
     "userAdded" : "User added successfully.",
     "userDetailsUpdated" : "User details updated successfully.",

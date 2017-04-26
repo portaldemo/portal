@@ -6,41 +6,43 @@ portalApp.controller('LoginController', function($scope, $window, $rootScope, $l
 
     //testing msg
     $scope.message ="hello";
-    $rootScope.isLeftMenuRequired = false; 
+    $rootScope.isLeftMenuRequired = false;
     $rootScope.isNavbarRequired = false;
 	};
 
   // Function login called on click on login button
   $scope.doLogin = function()
   {
-    $rootScope.isLeftMenuRequired = true; 
-    $rootScope.isNavbarRequired = true;
-    $location.path("/dashboard");
-    
-    //if(!validateForm()) {
+    $('#loginErrorMsgDiv').hide();
+    //$rootScope.isLeftMenuRequired = true;
+    //$rootScope.isNavbarRequired = true;
+    //$location.path("/dashboard");
 
-      /*try {
+    if(!validateForm()) {
+
+      try {
         //console.log($rootScope.emailId +' '+ $scope.login.emailId);
         //console.log($rootScope.password +' '+ $scope.login.password);
         $rootScope.loading = true;
-        AuthService.login($scope.login, function(error, json) {
-          if ($json != null) {
-         // if($scope.login.emailId == $rootScope.emailId && 
-         //  $scope.login.password ==  $rootScope.password) {
+        //AuthService.login($scope.login, function(error, json) {
+        //  if ($json != null) {
+          if($scope.login.emailId == $rootScope.emailId &&
+           $scope.login.password ==  $rootScope.password) {
              //populateRoles(json);
-             $rootScope.initUserSession(json);
-             $rootScope.isLeftMenuRequired = true; 
+             //$rootScope.initUserSession(json);
+             $rootScope.isLeftMenuRequired = true;
              $rootScope.isNavbarRequired = true;
              $location.path("/dashboard");
           } else {
             $rootScope.loading = false;
-            UtilityService.addErrorMessage($rootScope.gerErrorMessage(error));
+            //UtilityService.addErrorMessage($rootScope.gerErrorMessage(error));
+            $('#loginErrorMsgDiv').show();
           }
-        });
+        //});
       } catch(err) {
         $rootScope.loading = false;
-      }*/  
-   // }
+      }
+    }
   };
 
   function validateForm() {

@@ -2,12 +2,9 @@ portalApp.controller('ChangePasswordController', function($scope, $window, $root
 
   $scope.init = function () {
     $rootScope.isHeaderVisible = false;
-    $rootScope.isLeftMenuRequired(false);
     $scope.errormassage = "";
     $scope.token = $routeParams.token;
-    //console.log($scope.token);
     $scope.changePassword = {};
-    //verifyPasswordToken();
     resetValidation();
     $scope.passwordStrength ={"newPasswordStrengthMessage":false, "short": false, "strong": false};
   };
@@ -16,19 +13,7 @@ portalApp.controller('ChangePasswordController', function($scope, $window, $root
     if(!validateForm()) {
       try {
         $scope.changePassword.token = $scope.token;
-        //$rootScope.loading = true;
         $location.path("/login");
-        /*AuthService.changePassword($scope.changePassword, function(error, json) {
-          if (json == "") {
-             $rootScope.loading = false;
-             UtilityService.addSuccessMessage($rootScope.messages.updatePassword);
-             $rootScope.resetUserSession();
-             $location.path("/login");
-          } else {
-            $rootScope.loading = false;
-            UtilityService.addErrorMessage($rootScope.gerErrorMessage(error));
-          }
-        });*/
       } catch(err) {
         console.log(err);
         $rootScope.loading = false;
@@ -104,19 +89,6 @@ portalApp.controller('ChangePasswordController', function($scope, $window, $root
         $scope.passwordStrength.newPasswordStrengthMessage = false;
         $scope.changePasswordValidationErrors.newPasswordErrorMsg = $rootScope.messages.passwordMustContains;
     }
-    // else if($scope.changePassword.password.length >= 8 && $scope.changePassword.password.length < 12 ){
-    //    $scope.changePasswordValidationErrors.password = false;
-    //    $scope.passwordStrength.newPasswordStrengthMessage = true;
-    //    $scope.passwordStrength.short = true;
-    //    $scope.passwordStrength.strong = false;
-    //    $scope.changePasswordValidationErrors.newPasswordErrorMsg = $rootScope.messages.shortPassword;
-    // } else if($scope.changePassword.password.length > 12 ){
-    //    $scope.changePasswordValidationErrors.password = false;
-    //    $scope.passwordStrength.strong = true;
-    //    $scope.passwordStrength.short = false;
-    //    $scope.passwordStrength.newPasswordStrengthMessage = true;
-    //    $scope.changePasswordValidationErrors.newPasswordErrorMsg = $rootScope.messages.strongPassword;
-    // }
   }
 
   function resetValidation() {
